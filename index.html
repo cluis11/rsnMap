@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript" src=https://s3-us-west-2.amazonaws.com/s.cdpn.io/134893/SVGMarker.js></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="appv2.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css.css" type="text/css">
+    <script src="materialize.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.0/moment.js"</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone.js"</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data.js"></script>
+    
+</head>
+<body>
+	<header>
+         <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-dark circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+         <div id="nav-mobile" class="side-nav fixed">
+            <div class="rsn-logo"></div>
+            <h2>&Uacute;ltimo Sismo RSN</h2>
+            <div class="container">
+               <h3>Fecha y Hora Local</h3>
+               <p class="data" data-latest-seism="localDateTime"></p>
+               <h3>Magnitud</h3>
+               <p class="data" data-latest-seism="magnitude"></p>
+               <h3>Profundidad</h3>
+               <p class="data" data-latest-seism="depth"></p>
+               <div class="seism-coordinates-wrapper">
+                  <h3 class="inline">Latitud</h3>
+                  <p class="data" data-latest-seism="lat"></p>
+               </div>
+               <div class="seism-coordinates-wrapper">
+                  <h3 class="inline">Longitud</h3>
+                  <p class="data" data-latest-seism="lon"></p>
+               </div>
+               <h3>Localizaci&oacute;n</h3>
+               <p class="data" data-latest-seism="local"></p>
+               <div class="map-meta">
+                  <h2>Leyenda</h2>
+                  <ul>
+                     <li class="danger"><span></span> Mayor de 5Mw</li>
+                     <li class="mid"><span></span> De 3.6Mw a 4.9Mw</li>
+                     <li class="normal"><span></span> Menor de 3.5Mw</li>
+                     <li class="current"><span>&#x2605;</span> M&aacute;s reciente</li>
+                  </ul>
+                  <p>
+                     Un Mw mide el tamaño de un sismo. Cada incremento de un paso en la escalada de magnitud representa un sismo 10 veces más poderoso que el anterior.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </header>
+ 	<main>
+    	<div id="map" style="width: 100%; height: 100%"></div>
+    	<button class="days-filter filter waves-light waves-effect">&Uacute;ltimas 24 horas</button>
+    	<button class="active week-filter filter waves-light waves-effect">&Uacute;ltimos 15 d&iacute;as</button>
+  	</main>
+</body>
